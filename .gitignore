@@ -39,5 +39,4 @@ coverage/
 
 # Project-specific folders
 /docs/
-/backend/
 /node_modules/
