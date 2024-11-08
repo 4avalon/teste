@@ -4,7 +4,6 @@ Diretorio do Projeto: C:\Users\roger\OneDrive\Documentos\Servidor_Local_Phy\Aval
 Estrutura de diretorios:
 
 Lista de Arquivos no Diretório Principal 
-.gitignore
 index.html
 package-lock.json
 package.json
