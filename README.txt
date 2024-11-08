@@ -5,7 +5,6 @@ Estrutura de diretorios:
 
 Lista de Arquivos no Diretório Principal 
 .env
-.gitignore
 index.html
 package-lock.json
 package.json
