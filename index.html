@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja Virtual - Teste</title>
-    <link rel="stylesheet" href="frontend/css/style.css"> <!-- Caminho ajustado -->
+    <link rel="stylesheet" href="frontend/css/style.css"> <!-- Caminho ajustado para o CSS -->
 </head>
 <body>
     <header>
@@ -29,14 +28,15 @@
         </section>
 
         <!-- Seção do Carrinho -->
-        <section id="carrinho">
-            <h2>Seu Carrinho</h2>
+        <section id="carrinho" aria-labelledby="carrinho-title">
+            <h2 id="carrinho-title">Seu Carrinho</h2>
             <div id="carrinho-container">
                 <!-- Itens do carrinho serão exibidos aqui -->
             </div>
-            <p id="total-container">Total: R$0.00</p> <!-- Contêiner para o total -->
+            <p id="total-preco">Total: R$0,00</p>
             <button id="finalizar-compra">Finalizar Compra</button>
         </section>
+
         <!-- Seção Administrativa -->
         <section id="admin" aria-labelledby="admin-title">
             <h2 id="admin-title">Área Administrativa</h2>
@@ -72,50 +72,7 @@
         <p>© 2024 Loja Virtual - Teste</p>
     </footer>
 
-    <!-- Carrega o JavaScript de forma assíncrona para melhor desempenho -->
-
-    <!-- No index.html -->
-    <script type="module" src="frontend/js/main.js"></script>
-
-=======
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Z</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Quiz Z</h1>
-        </div>
-        <div class="selection-container">
-            <label for="quiz-selector">hasshhha uma prova:</label>
-            <select id="quiz-selector">
-                <option value="">Selecione a prova</option>
-                <option value="data\22ELETRONUCLEAR.xml">22ELETRONUCLEAR.xml</option>
-                <option value="data\24AGERIO.xml">24AGERIO.xml</option>
-            </select>
-            <button id="start-btn" class="start-btn" onclick="startQuiz()">Iniciar Quiz</button>
-        </div>
-        <div id="question-container" class="question-container">
-            <!-- Conteúdo da pergunta -->
-            <div class="image-container">
-                <img src="data/Ava.jpg" alt="Imagem de exemplo">
-            </div>
-        </div>
-        <div class="options-container"></div>
-        <div class="feedback-container" id="feedback-container"></div>        
-        <div class="navigation" id="navigation" style="display: none;">
-            <button id="show-answer-btn" onclick="showAnswer()">Mostrar Resposta</button>
-            <button id="prev-btn" onclick="prevQuestion()">Anterior</button>
-            <button id="next-btn" onclick="nextQuestion()">Próximo</button>
-        </div>
-        <div id="score-container" class="score-container"></div>
-        <div id="result-container" class="result-container" style="display: none;"></div>
-    </div>
-    <script src="scripts.js"></script>
->>>>>>> 474f71b0812ad6be4b19b5e469cffc76d7667745
+    <!-- Carrega o JavaScript -->
+    <script src="frontend/js/main.js" type="module"></script> <!-- Caminho ajustado para o JS principal -->
 </body>
 </html>

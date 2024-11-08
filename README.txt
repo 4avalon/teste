@@ -1,10 +1,11 @@
-<<<<<<< HEAD
 Nome do Projeto: teste
 Diretorio do Projeto: C:\Users\roger\OneDrive\Documentos\Servidor_Local_Phy\Avalon\Projetos\teste
 ------------------------------------------------
 Estrutura de diretorios:
 
 Lista de Arquivos no DiretÃ³rio Principal 
+.env
+.gitignore
 index.html
 package-lock.json
 package.json
@@ -47,7 +48,7 @@ C:.
 ¦   server.js
 ¦   
 +---config
-¦       dbConfig.js
+¦       dbconfig.js
 ¦       
 +---controllers
 ¦       produtoController.js
@@ -66,6 +67,3 @@ C:.
         produtoRoutes.js
         
  
-=======
-"Configuracao inicial para o projeto teste" 
->>>>>>> 474f71b0812ad6be4b19b5e469cffc76d7667745

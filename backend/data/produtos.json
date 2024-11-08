@@ -1,0 +1,58 @@
+[
+    {
+        "nome": "Cafeteira Genérica",
+        "descricao": "Cafeteira prática e funcional para preparar seu café.",
+        "preco": 149,
+        "categoria": "Eletrodomésticos",
+        "estoque": 10,
+        "imagem": "generic_coffee_maker.jpg"
+    },
+    {
+        "nome": "Halter Genérico",
+        "descricao": "Halter ideal para exercícios de musculação.",
+        "preco": 59.9,
+        "categoria": "Esporte",
+        "estoque": 20,
+        "imagem": "generic_dumbbell.jpg"
+    },
+    {
+        "nome": "Perfume Genérico",
+        "descricao": "Perfume com fragrância agradável para uso diário.",
+        "preco": 99,
+        "categoria": "Cosméticos",
+        "estoque": 15,
+        "imagem": "generic_perfume_bottle.jpg"
+    },
+    {
+        "nome": "Smartphone Genérico",
+        "descricao": "Smartphone com funcionalidades básicas para o dia a dia.",
+        "preco": 499,
+        "categoria": "Eletrônicos",
+        "estoque": 5,
+        "imagem": "generic_smartphone.jpg"
+    },
+    {
+        "nome": "Relógio de Pulso Genérico",
+        "descricao": "Relógio de pulso estiloso e funcional.",
+        "preco": 199,
+        "categoria": "Acessórios",
+        "estoque": 8,
+        "imagem": "generic_wristwatch.jpg"
+    },
+    {
+        "nome": "Urso de Pelúcia Genérico",
+        "descricao": "Urso de pelúcia macio e confortável.",
+        "preco": 39.9,
+        "categoria": "Brinquedos",
+        "estoque": 25,
+        "imagem": "generic_teddy_bear.jpg"
+    },
+    {
+        "nome": "Camiseta Mágica",
+        "descricao": "Camiseta temática para amantes de magia.",
+        "preco": 79.9,
+        "categoria": "Roupas",
+        "estoque": 30,
+        "imagem": "generic_wizard_tshirt.jpg"
+    }
+]
