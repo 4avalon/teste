@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Nome do Projeto: teste
 Diretorio do Projeto: C:\Users\roger\OneDrive\Documentos\Servidor_Local_Phy\Avalon\Projetos\teste
 ------------------------------------------------
@@ -65,3 +66,6 @@ C:.
         produtoRoutes.js
         
  
+=======
+"Configuracao inicial para o projeto teste" 
+>>>>>>> 474f71b0812ad6be4b19b5e469cffc76d7667745
