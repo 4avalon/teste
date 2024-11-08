@@ -1,5 +1,4 @@
 // backend/server.js
-// isso ai
 
 require('dotenv').config();
 const express = require('express');
@@ -8,14 +7,17 @@ const cors = require('cors');
 const produtoRoutes = require('./routes/produtoRoutes');
 const dbConfig = require('./config/dbConfig'); 
 
-
 const app = express();
 const PORT = process.env.SERVER_PORT || 3000;
-
 
 // Middleware para JSON e CORS
 app.use(express.json());
 app.use(cors());
+
+// Rota para a raiz
+app.get('/', (req, res) => {
+    res.send('Bem-vindo ao servidor do projeto teste!');
+});
 
 // Servir arquivos estáticos do frontend (ajuste o caminho se necessário)
 app.use('/teste', express.static('frontend'));
