@@ -1,3 +1,8 @@
+# Project-specific folders
+/docs/
+/node_modules/
+/backend/
+
 # Logs
 logs
 *.log
@@ -11,7 +16,7 @@ pids
 *.seed
 *.pid.lock
 
-# Compiled binary addons \(for Node.js\)
+# Compiled binary addons (for Node.js)
 build/Release
 
 # Dependency directories
@@ -36,7 +41,45 @@ coverage/
 
 # dotenv environment variables file
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Project-specific folders
-/docs/
-/node_modules/
+# Build output directories
+dist/
+build/
+tmp/
+out/
+
+# IDE and editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux system files
+*~
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Yarn and PnP
+.yarn/
+.pnp.*
+.pnp.js
+
+# Testing output
+.jest/
+.nyc_output/
