@@ -1,0 +1,28 @@
+/* --- Estilos para os Produtos da Loja --- */
+#produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.produto {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.produto img {
+  max-width: 100%;
+  height: auto;
+}
+
+.produto h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.produto p {
+  margin: 10px 0;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Virtual - Teste</title>
+
+  <!-- Arquivos CSS Modulares -->
+  <link rel="stylesheet" href="frontend/css/styles.css">  <!-- Estilo Global (cabeçalho, rodapé, etc.) -->
+  <link rel="stylesheet" href="frontend/css/loja.css">    <!-- Estilo dos Produtos -->
+  <link rel="stylesheet" href="frontend/css/carrinho.css"> <!-- Estilo do Carrinho -->
+  <link rel="stylesheet" href="frontend/css/admin.css">   <!-- Estilo da Administração -->
+  
+
+  <!-- Adicionar Font Awesome para os ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <!-- Cabeçalho com o nome da loja e o menu de navegação -->
+  <header>
+    <h1>Loja Virtual - Teste</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Loja</a></li>
+        <li><a href="/carrinho">Carrinho</a></li>
+        <li><a href="/admin">Administração</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- --- Conteúdo Principal --- -->
+
+  <!-- Seção da Loja -->
+  <main>
+    <h2>Produtos Disponíveis</h2>
+    <div id="produtos-container">
+      <!-- Os produtos serão carregados aqui dinamicamente -->
+    </div>
+  </main>
+
+  <!-- Seção de Carrinho -->
+  <section id="carrinho">
+    <h2>Carrinho de Compras</h2>
+    <div id="carrinho-container">
+      <p>Seu carrinho está vazio.</p>
+    </div>
+    <button id="finalizar-compra">Finalizar Compra</button>
+    <button id="limpar-carrinho">Limpar Carrinho</button>
+  </section>
+
+
+<!-- Administração de Produtos -->
+<!-- Administração de Produtos -->
+<section id="admin">
+  
+  <!-- Modelo do Produto -->
+  <!-- Modelo do Produto -->
+<div id="modelo-produto">
+  <h2>Administração de Produtos</h2>
+
+  <!-- Banco de Dados e URL da API -->
+  <p><strong>Banco de Dados:</strong> <span id="banco-dados">Carregando...</span></p>
+  <p><strong>URL da API:</strong> <span id="api-url">Carregando...</span></p>
+  
+  <!-- Informações do produto -->
+  <input type="text" id="nome-produto" placeholder="Nome do Produto" disabled>
+  <input type="text" id="descricao-produto" placeholder="Descrição" disabled>
+  <input type="number" id="preco-produto" placeholder="Preço" disabled>
+  <input type="number" id="estoque-produto" placeholder="Estoque" disabled>
+  <input type="file" id="imagem-produto" disabled>
+  
+  <div class="buttons-actions">
+    <button id="salvar-produto" class="btn-save" disabled>Salvar</button>
+    <button id="cancelar-produto" class="btn-cancel" disabled>Cancelar</button>
+  </div>
+  
+  <div class="buttons">
+    <button id="novo-produto" class="btn-green">Novo Produto</button>
+    <button id="alterar-produto" class="btn-blue" disabled>Alterar</button>
+    <button id="excluir-produto" class="btn-red" disabled>Excluir</button>
+  </div>
+</div>
+
+
+  <!-- Lista de produtos -->
+  <div id="lista-produtos">
+    <!-- Aqui serão listados os produtos, sem botões de ação -->
+  </div>
+</section>
+
+
+  <!-- Rodapé com direitos autorais -->
+  <footer>
+    <p>&copy; 2024 Loja Virtual</p>
+  </footer>
+
+  <script src="frontend/js/main.js" type="module"></script> <!-- JS principal -->
+</body>
+
+</html>

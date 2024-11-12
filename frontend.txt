@@ -1,0 +1,665 @@
+// frontend\css\admin.css
+
+/* ================================
+   Estilo para a Administração de Produtos
+   ================================ */
+#admin {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#admin h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#modelo-produto {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#modelo-produto input[type="text"],
+#modelo-produto input[type="number"],
+#modelo-produto input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#modelo-produto input[disabled] {
+  background-color: #f0f0f0;
+}
+
+#modelo-produto .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+#modelo-produto .buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;  /* Adicionado um espaço entre os botões */
+  width: 100%;
+}
+
+#modelo-produto .btn-green {
+  background-color: #28a745;
+  color: white;
+}
+
+#modelo-produto .btn-blue {
+  background-color: #007bff;
+  color: white;
+}
+
+#modelo-produto .btn-red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.buttons-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#salvar-produto,
+#cancelar-produto {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#salvar-produto {
+  background-color: #007bff;
+  color: white;
+}
+
+#cancelar-produto {
+  background-color: #6c757d;
+  color: white;
+}
+
+#salvar-produto:disabled,
+#cancelar-produto:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* ================================
+   Estilo para a Lista de Produtos
+   ================================ */
+#lista-produtos {
+  flex: 2;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#lista-produtos p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#lista-produtos .produto {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#lista-produtos .produto p {
+  margin: 0;
+}
+
+#lista-produtos .produto button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#lista-produtos .produto button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#lista-produtos .produto button:hover {
+  background-color: #0056b3;
+}
+
+/* ================================
+   Responsividade
+   ================================ */
+@media (max-width: 768px) {
+  #admin {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #modelo-produto,
+  #lista-produtos {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #modelo-produto .buttons,
+  .buttons-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #modelo-produto .buttons button,
+  #salvar-produto,
+  #cancelar-produto {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+
+
+// frontend\css\carrinho.css
+
+/* --- Estilos para o Carrinho de Compras --- */
+#carrinho {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+#carrinho-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#carrinho-container p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+#limpar-carrinho {
+  background-color: #e74c3c;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+#finalizar-compra {
+  background-color: #2ecc71;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+
+
+// frontend\css\loja.css
+
+/* --- Estilos para os Produtos da Loja --- */
+#produtos-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.produto {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.produto img {
+  max-width: 100%;
+  height: auto;
+}
+
+.produto h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.produto p {
+  margin: 10px 0;
+}
+
+
+
+// frontend\css\styles.css
+
+/* --- Estilos CSS --- */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  color: #4CAF50;
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+
+
+// frontend\js\components\admin\crud.js
+
+// frontend/js/admin/crud.js
+console.log("crud.js requisitado.");
+// frontend/js/components/admin/crud.js
+
+console.log("crud.js requisitado.");
+
+// Função para adicionar ou editar um produto
+export const salvarProduto = async () => {
+  const nome = document.getElementById('nome-produto').value;
+  const descricao = document.getElementById('descricao-produto').value;
+  const preco = document.getElementById('preco-produto').value;
+  const estoque = document.getElementById('estoque-produto').value;
+
+  const produto = { nome, descricao, preco, estoque };
+
+  const produtoId = document.getElementById('produto-id').value; // Caso exista um produto a ser editado
+
+  let url = 'http://localhost:3000/api/produtosteste';
+  let method = 'POST';
+
+  if (produtoId) {
+    url = `http://localhost:3000/api/produtosteste/${produtoId}`;
+    method = 'PUT'; // Caso seja edição
+  }
+
+  try {
+    const response = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(produto)
+    });
+
+    if (!response.ok) throw new Error('Erro ao salvar produto');
+    alert('Produto salvo com sucesso');
+  } catch (error) {
+    console.error(error);
+    alert('Erro ao salvar produto');
+  }
+};
+
+// Função para excluir um produto
+export const excluirProduto = async (produtoId) => {
+  try {
+    const response = await fetch(`http://localhost:3000/api/produtosteste/${produtoId}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) throw new Error('Erro ao excluir produto');
+    alert('Produto excluído com sucesso');
+  } catch (error) {
+    console.error(error);
+    alert('Erro ao excluir produto');
+  }
+};
+
+// Função para preencher os campos com os dados de um produto existente
+export const editarProduto = async (produtoId) => {
+  try {
+    const response = await fetch(`http://localhost:3000/api/produtosteste/${produtoId}`);
+    const produto = await response.json();
+
+    document.getElementById('nome-produto').value = produto.nome;
+    document.getElementById('descricao-produto').value = produto.descricao;
+    document.getElementById('preco-produto').value = produto.preco;
+    document.getElementById('estoque-produto').value = produto.estoque;
+    document.getElementById('produto-id').value = produto._id; // Preenche o id do produto
+  } catch (error) {
+    console.error('Erro ao editar produto', error);
+    alert('Erro ao editar produto');
+  }
+};
+
+// Função para criar um novo produto
+export const novoProduto = () => {
+  document.getElementById('nome-produto').value = '';
+  document.getElementById('descricao-produto').value = '';
+  document.getElementById('preco-produto').value = '';
+  document.getElementById('estoque-produto').value = '';
+  document.getElementById('produto-id').value = ''; // Limpar o campo de ID
+};
+
+
+
+// frontend\js\components\admin\infoDB.js
+
+// frontend/js/components/admin/infoDB.js
+
+console.log("infoDB.js requisitado.");
+
+// Função para carregar as informações do banco de dados
+export const carregarInformacoesBanco = async () => {
+  const bancoDeDadosElement = document.getElementById('banco-dados');
+  const apiUrlElement = document.getElementById('api-url');
+
+  try {
+    const response = await fetch('http://localhost:3000/api/informacoes');
+    if (!response.ok) throw new Error('Erro ao carregar informações do banco');
+    
+    const data = await response.json();
+    bancoDeDadosElement.innerText = `Banco de Dados: ${data.bancoDeDados}`;
+    apiUrlElement.innerText = `URL da API: ${data.apiUrl}`;
+  } catch (error) {
+    console.error('Erro ao carregar informações:', error);
+    bancoDeDadosElement.innerText = 'Erro ao carregar banco de dados';
+    apiUrlElement.innerText = 'Erro ao carregar URL';
+  }
+};
+
+
+
+// frontend\js\components\admin\productListHandler.js
+
+// frontend/js/components/admin/productListHandler.js
+
+console.log("productListHandler.js requisitado.");
+
+// Função para listar os produtos
+export const listarProdutos = async () => {
+  const listaProdutosElement = document.getElementById('lista-produtos');
+  
+  try {
+    const response = await fetch('http://localhost:3000/api/produtosteste');
+    const produtos = await response.json();
+    listaProdutosElement.innerHTML = '';
+
+    produtos.forEach(produto => {
+      const produtoElement = document.createElement('div');
+      produtoElement.classList.add('produto');
+      produtoElement.innerHTML = `
+        <h3>${produto.nome}</h3>
+        <p>${produto.descricao}</p>
+        <p>Preço: R$ ${produto.preco}</p>
+        <p>Estoque: ${produto.estoque}</p>
+        <button onclick="editarProdutoAdmin('${produto._id}')">Editar</button>
+      `;
+      listaProdutosElement.appendChild(produtoElement);
+    });
+  } catch (error) {
+    console.error('Erro ao listar produtos:', error);
+    listaProdutosElement.innerHTML = '<p>Erro ao carregar produtos.</p>';
+  }
+};
+
+
+
+// frontend\js\components\adminHandler.js
+
+// frontend/js/components/adminHandler.js
+console.log("adminHandler.js requisitado.");
+
+// Importando funções de CRUD, informações do banco e listagem de produtos
+//import { editarProdutoAdmin, excluirProdutoAdmin, salvarProdutoAdmin, novoProduto, cancelarEdicaoAdmin } from './admin/crud.js';
+import { editarProduto, excluirProduto, salvarProduto, novoProduto, cancelarEdicao } from './admin/crud.js';
+import { carregarInformacoesBanco } from './admin/infoDB.js';
+import { listarProdutos } from './admin/productListHandler.js';
+
+// Função para carregar as informações do banco de dados
+export const carregarInformacoesBancoAdmin = () => {
+    carregarInformacoesBanco();  // Chama a função de infoDB.js para buscar as informações do banco
+};
+
+// Função para listar todos os produtos no painel administrativo
+export const listarProdutosAdmin = () => {
+    listarProdutos();  // Chama a função de productListHandler.js para listar os produtos
+};
+
+// Função para editar um produto
+export const editarProdutoAdmin = (produtoId) => {
+    editarProduto(produtoId);  // Chama a função de crud.js para editar um produto
+};
+
+// Função para excluir um produto
+export const excluirProdutoAdmin = (produtoId) => {
+    excluirProduto(produtoId);  // Chama a função de crud.js para excluir um produto
+};
+
+// Função para salvar alterações ou novo produto
+export const salvarProdutoAdmin = () => {
+    salvarProduto();  // Chama a função de crud.js para salvar um produto
+};
+
+// Função para cancelar edição
+export const cancelarEdicaoAdmin = () => {
+    cancelarEdicao();  // Chama a função de crud.js para cancelar edição
+};
+
+
+
+// frontend\js\components\cartHandler.js
+
+// frontend/js/components/cartHandler.js
+
+console.log("frontend/js/components/cartHandler.js requisitado.");  
+// Função para adicionar produto ao carrinho
+export const adicionarAoCarrinho = (produto) => {
+  const carrinho = getCarrinho();
+  
+  // Verifica se o produto já existe no carrinho
+  const produtoExistente = carrinho.find(item => item.id === produto.id);
+  
+  if (produtoExistente) {
+    produtoExistente.quantidade += 1;  // Se já existe, aumenta a quantidade
+  } else {
+    produto.id = produto._id;  // Garantindo que o ID seja único
+    produto.quantidade = 1;  // Se não existe, define a quantidade como 1
+    carrinho.push(produto);  // Adiciona o produto ao carrinho
+  }
+
+  salvarCarrinho(carrinho);
+  exibirCarrinho();
+};
+
+// Função para exibir o carrinho de compras
+export const exibirCarrinho = () => {
+  const carrinhoContainer = document.getElementById('carrinho-container');
+  const carrinho = getCarrinho();
+  carrinhoContainer.innerHTML = '';
+
+  if (carrinho.length === 0) {
+    carrinhoContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+  } else {
+    let total = 0;
+    carrinho.forEach(item => {
+      const itemCarrinho = document.createElement('div');
+      itemCarrinho.classList.add('item-carrinho');
+      itemCarrinho.innerHTML = `
+        <p>${item.nome} - Quantidade: ${item.quantidade} - R$ ${item.preco * item.quantidade}</p>
+      `;
+      carrinhoContainer.appendChild(itemCarrinho);
+      total += item.preco * item.quantidade;
+    });
+
+    const totalCarrinho = document.createElement('p');
+    totalCarrinho.innerHTML = `Total: R$ ${total.toFixed(2)}`;
+    carrinhoContainer.appendChild(totalCarrinho);
+  }
+};
+
+// Função para limpar o carrinho
+export const limparCarrinho = () => {
+  localStorage.removeItem('carrinho');  // Limpa o carrinho do localStorage
+  exibirCarrinho();  // Atualiza a exibição do carrinho
+};
+
+// Função para obter o carrinho do localStorage
+const getCarrinho = () => {
+  return JSON.parse(localStorage.getItem('carrinho')) || [];
+};
+
+// Função para salvar o carrinho no localStorage
+const salvarCarrinho = (carrinho) => {
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+};
+
+
+
+
+// frontend\js\components\productHandler.js
+
+// frontend/js/components/productHandler.js
+
+console.log("frontend/js/components/productHandler.js requisitado.");  
+// frontend/js/components/admin/adminHandler.js
+import { editarProduto, excluirProduto, salvarProduto, novoProduto } from './crud.js';
+import { carregarInformacoesBanco } from './infoDB.js';
+import { listarProdutos } from './productListHandler.js';
+
+console.log("adminHandler.js requisitado.");
+
+// Função para carregar as informações do banco de dados
+export const carregarInformacoesBancoFrontend = () => {
+  carregarInformacoesBanco();
+};
+
+// Função para listar todos os produtos no painel administrativo
+export const listarProdutosAdmin = () => {
+  listarProdutos();
+};
+
+// Função para editar um produto
+export const editarProdutoAdmin = (produtoId) => {
+  editarProduto(produtoId);
+};
+
+// Função para excluir um produto
+export const excluirProdutoAdmin = (produtoId) => {
+  excluirProduto(produtoId);
+};
+
+// Função para salvar alterações ou novo produto
+export const salvarProdutoAdmin = () => {
+  salvarProduto();
+};
+
+// Função para criar um novo produto
+export const novoProdutoAdmin = () => {
+  novoProduto();
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  carregarInformacoesBancoFrontend();
+  listarProdutosAdmin();
+});
+
+
+
+// frontend\js\main.js
+
+// frontend/js/main.js
+console.log("frontend/js/main.js requisitado.");
+
+// Importando funções de adminHandler.js
+import { listarProdutosAdmin, carregarInformacoesBancoAdmin } from './components/adminHandler.js';
+import { fetchProdutos } from './components/productHandler.js';
+import { exibirCarrinho, limparCarrinho } from './components/cartHandler.js';
+
+// Quando a página for carregada
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("main.js requisitado.");
+
+  // Carregar informações do banco e listar os produtos
+  carregarInformacoesBancoAdmin();  // Carregar as informações do banco de dados
+  listarProdutosAdmin();  // Carregar a lista de produtos no painel administrativo
+
+  // Exibe os produtos e o carrinho
+  fetchProdutos(); // Chama a função para carregar os produtos
+  exibirCarrinho(); // Exibe o carrinho carregado
+
+  // Lida com o botão de limpar carrinho
+  const botaoLimparCarrinho = document.getElementById('limpar-carrinho');
+  botaoLimparCarrinho.addEventListener('click', () => {
+    console.log("Carrinho limpo.");
+    limparCarrinho();  // Chama a função para limpar o carrinho
+  });
+});
+

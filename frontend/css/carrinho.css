@@ -1,0 +1,37 @@
+/* --- Estilos para o Carrinho de Compras --- */
+#carrinho {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+#carrinho-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#carrinho-container p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+#limpar-carrinho {
+  background-color: #e74c3c;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}
+
+#finalizar-compra {
+  background-color: #2ecc71;
+  padding: 10px;
+  margin-top: 10px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+}

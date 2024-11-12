@@ -1,0 +1,236 @@
+// backend\config\dbConfig.js
+
+// backend/config/dbConfig.js
+
+console.log("backend/config/dbConfig.js requesitado");  
+
+require('dotenv').config();
+
+const mongoose = require('mongoose');
+
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/produtoteste'; 
+console.log('Usando o banco de dados:', dbURI); 
+
+const connectDB = async () => {
+    try {
+        await mongoose.connect(dbURI);
+        console.log('Conectado ao MongoDB.');
+    } catch (err) {
+        console.error('Erro ao conectar ao MongoDB:', err);
+        process.exit(1); 
+    }
+};
+
+module.exports = connectDB;
+
+
+
+// backend\data\addProdutos.js
+
+// backend/data/addProdutos.js
+console.log("backend/data/addProdutos.js requisitado");
+
+
+const mongoose = require('mongoose');
+const Produto = require('../models/produtoModel');
+require('dotenv').config();
+
+const dbURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/produtoteste';
+mongoose.connect(dbURI)
+    .then(() => console.log('Conectado ao MongoDB'))
+    .catch(error => console.error('Erro ao conectar ao MongoDB:', error));
+
+// Produtos que serão adicionados
+const produtos = [
+    {
+        nome: 'Cafeteira',
+        descricao: 'Cafeteira prática e funcional para preparar seu café.',
+        preco: 149.00,
+        categoria: 'Eletrônicos',
+        estoque: 10,
+        imagem: 'cafeteira.jpg'
+    },
+    {
+        nome: 'Halter',
+        descricao: 'Halter ideal para exercícios de musculação.',
+        preco: 59.90,
+        categoria: 'Esporte',
+        estoque: 20,
+        imagem: 'halter.jpg'
+    },
+    {
+        nome: 'Perfume',
+        descricao: 'Perfume com fragrância agradável para uso diário.',
+        preco: 99.00,
+        categoria: 'Cosméticos',
+        estoque: 15,
+        imagem: 'perfume.jpg'
+    },
+    {
+        nome: 'Smartphone',
+        descricao: 'Smartphone com câmera de alta qualidade.',
+        preco: 2499.00,
+        categoria: 'Eletrônicos',
+        estoque: 5,
+        imagem: 'smartphone.jpg'
+    },
+    {
+        nome: 'Cadeira Ergonômica',
+        descricao: 'Cadeira ergonômica para longas horas de trabalho.',
+        preco: 399.90,
+        categoria: 'Móveis',
+        estoque: 8,
+        imagem: 'cadeira.jpg'
+    }
+];
+
+// Adicionando os produtos no banco de dados
+Produto.insertMany(produtos)
+    .then(() => {
+        console.log('Produtos inseridos com sucesso!');
+        mongoose.connection.close();
+    })
+    .catch((error) => {
+        console.error('Erro ao inserir produtos:', error);
+        mongoose.connection.close();
+    });
+
+
+
+// backend\models\produtoModel.js
+
+// backend/models/produtoModel.js
+console.log("backend/models/produtoModel.js requesitado");  
+
+
+const mongoose = require('mongoose');
+
+// Esquema do produto
+const produtoSchema = new mongoose.Schema({
+    nome: { type: String, required: true },
+    descricao: { type: String, required: true },
+    preco: { type: Number, required: true },
+    categoria: { type: String, required: true },
+    estoque: { type: Number, required: true },
+    imagem: { type: String, required: true },
+    dataCriacao: { type: Date, default: Date.now }
+});
+
+// Exportando o modelo Produto
+module.exports = mongoose.model('Produto', produtoSchema);
+
+
+
+
+// backend\routes\adminRoutes.js
+
+// backend/routes/adminRoutes.js
+console.log("backend/routes/adminRoutes.js requisitado");
+
+const express = require('express');
+const router = express.Router();
+
+// Rota para retornar informações do banco de dados
+router.get('/informacoes', (req, res) => {
+  const dbInfo = {
+    bancoDeDados: process.env.MONGODB_URI ? 'MongoDB Atlas' : 'Localhost', // Dinamicamente, dependendo de onde o banco estiver
+    apiUrl: '/api/produtosteste'
+  };
+
+  try {
+    // Lógica para garantir que o banco de dados está respondendo antes de fornecer as informações
+    res.json(dbInfo);
+  } catch (err) {
+    console.error('Erro ao carregar informações do banco de dados:', err);
+    res.status(500).json({ message: 'Erro ao carregar informações', error: err });
+  }
+});
+
+module.exports = router;
+
+
+
+// backend\routes\produtoRoutes.js
+
+// backend/routes/produtoRoutes.js
+console.log("backend/routes/produtoRoutes.js requisitado");
+
+const express = require('express');
+const Produto = require('../models/produtoModel');
+const router = express.Router();
+
+// Middleware para verificar se o produto existe
+const verificarProduto = async (req, res, next) => {
+  try {
+    const produto = await Produto.findById(req.params.id);
+    if (!produto) {
+      return res.status(404).json({ message: "Produto não encontrado" });
+    }
+    req.produto = produto;
+    next();
+  } catch (err) {
+    res.status(500).json({ message: "Erro ao encontrar o produto", error: err });
+  }
+};
+
+// Rota para listar todos os produtos
+router.get('/produtosteste', async (req, res) => {
+  try {
+    const produtos = await Produto.find();
+    res.json(produtos);
+  } catch (err) {
+    res.status(500).json({ message: 'Erro ao buscar produtos', error: err });
+  }
+});
+
+// Rota para obter um produto específico
+router.get('/produtosteste/:id', verificarProduto, (req, res) => {
+  res.json(req.produto);
+});
+
+module.exports = router;
+
+
+
+// backend\server.js
+
+// backend/server.js
+
+console.log("backend/server.js requisitado");
+
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+const connectDB = require('./config/dbConfig');
+const produtoRoutes = require('./routes/produtoRoutes');
+const adminRoutes = require('./routes/adminRoutes'); 
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Conectando ao banco de dados
+connectDB();
+
+// Middleware
+app.use(express.json());
+app.use(cors());
+
+// Serve arquivos estáticos da pasta 'frontend'
+app.use(express.static(path.join(__dirname, 'frontend')));
+
+// Rotas da API
+// Configuração das rotas
+app.use('/api', adminRoutes);  // A rota "/informacoes" está sendo usada dentro de "/api"
+app.use('/api', produtoRoutes);
+
+// Middleware para logs de rotas
+app.use('/api', (req, res, next) => {
+    console.log(`Rota ${req.originalUrl} acessada`);
+    next();
+});
+
+// Inicia o servidor
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
