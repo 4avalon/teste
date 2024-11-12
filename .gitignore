@@ -1,7 +1,6 @@
 # Project-specific folders
 /docs/
 /node_modules/
-/backend/
 
 # Logs
 logs
