@@ -1,30 +1,45 @@
-// frontend/js/components/admin/productListHandler.js
-
+// frontend/js/admin/productListHandler.js
 console.log("productListHandler.js requisitado.");
+import { editarProduto, excluirProduto, salvarProduto, novoProduto, cancelarEdicao } from './crud.js';
 
-// Função para listar os produtos
+// Função para listar todos os produtos
 export const listarProdutos = async () => {
-  const listaProdutosElement = document.getElementById('lista-produtos');
-  
-  try {
-    const response = await fetch('http://localhost:3000/api/produtosteste');
-    const produtos = await response.json();
-    listaProdutosElement.innerHTML = '';
+    const produtosContainer = document.getElementById('lista-produtos');
 
-    produtos.forEach(produto => {
-      const produtoElement = document.createElement('div');
-      produtoElement.classList.add('produto');
-      produtoElement.innerHTML = `
-        <h3>${produto.nome}</h3>
-        <p>${produto.descricao}</p>
-        <p>Preço: R$ ${produto.preco}</p>
-        <p>Estoque: ${produto.estoque}</p>
-        <button onclick="editarProdutoAdmin('${produto._id}')">Editar</button>
-      `;
-      listaProdutosElement.appendChild(produtoElement);
-    });
-  } catch (error) {
-    console.error('Erro ao listar produtos:', error);
-    listaProdutosElement.innerHTML = '<p>Erro ao carregar produtos.</p>';
-  }
+    try {
+        const response = await fetch('http://localhost:3000/api/produtosteste');
+        if (!response.ok) {
+            throw new Error('Erro ao buscar os produtos');
+        }
+
+        const produtos = await response.json();
+        produtosContainer.innerHTML = '';
+
+        if (produtos.length > 0) {
+            produtos.forEach(produto => {
+                const produtoElement = document.createElement('div');
+                produtoElement.classList.add('produto');
+                produtoElement.innerHTML = `
+                    <div class="produto-item" data-id="${produto._id}">
+                        <h4>${produto.nome}</h4>
+                        <img src="frontend/assets/images/${produto.imagem}" alt="${produto.nome}">
+                        <p>Preço: R$ ${produto.preco}</p>
+                        <p>Estoque: ${produto.estoque}</p>
+                        <button class="editar-produto">Editar</button>
+                    </div>
+                `;
+                produtosContainer.appendChild(produtoElement);
+
+                // Evento para editar o produto
+                produtoElement.querySelector('.editar-produto').addEventListener('click', () => {
+                    editarProduto(produto._id);
+                });
+            });
+        } else {
+            produtosContainer.innerHTML = '<p>Nenhum produto disponível.</p>';
+        }
+    } catch (error) {
+        console.error('Erro ao buscar os produtos:', error);
+        produtosContainer.innerHTML = '<p>Ocorreu um erro ao carregar os produtos.</p>';
+    }
 };
